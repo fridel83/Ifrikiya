@@ -1,0 +1,24 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+
+
+{% block title %}liste Auteurs{% endblock %}
+
+{% block corps %}
+{% if nbre < 1 %}
+  <h3>aucun resultat ne correspond à votre recherche</h3>
+{% else %}
+
+{% for ecrivain in liste_ecrivain %}
+ 
+ <div id="ecrivain">
+    <p>{{ ecrivain.nom~" "~ecrivain.prenom }}...<a href="{{ path('ifrikiya_site_un_ecrivain', { 'id':ecrivain.idecrivains })  }}">lire la fiche</a></p>
+ </div>
+ 
+ {% endfor%}
+ 
+{% endif %}
+{% endblock %}

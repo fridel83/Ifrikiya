@@ -1,0 +1,104 @@
+ifrikiya_admin_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ifrikiyaAdminBundle:Default:index }
+ifrikiya_admin_acceuil:
+    pattern:  /acceuil
+    defaults: { _controller: ifrikiyaAdminBundle:Admin:acceuil }
+ifrikiya_admin_genres:
+    pattern:  /genres
+    defaults: { _controller: ifrikiyaAdminBundle:AdminGenres:acceuil }
+ifrikiya_admin_ajouter_genre:
+    pattern:  /genres/ajouter
+    defaults: { _controller: ifrikiyaAdminBundle:AdminGenres:ajouter }
+ifrikiya_admin_modifier_genre:
+    pattern:  /genres/modifier/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminGenres:modifier }
+    requirements:
+        id:  \d+
+ifrikiya_admin_supprimer_genre:
+    pattern:  /genres/supprimer/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminGenres:supprimer }
+    requirements:
+        id:  \d+
+ifrikiya_admin_livres:
+    pattern:  /livres
+    defaults: { _controller: ifrikiyaAdminBundle:AdminLivres:acceuil }
+ifrikiya_admin_ajouter_livre:
+    pattern:  /livres/ajouter
+    defaults: { _controller: ifrikiyaAdminBundle:AdminLivres:ajouter }
+ifrikiya_admin_modifier_livre:
+    pattern:  /livres/modifier/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminLivres:modifier }
+    requirements:
+        id:  \d+
+ifrikiya_admin_supprimer_livre:
+    pattern:  /livres/supprimer/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminLivres:supprimer }
+    requirements:
+        id:  \d+
+ifrikiya_admin_ecrivains:
+    pattern:  /ecrivains
+    defaults: { _controller: ifrikiyaAdminBundle:AdminEcrivains:acceuil }
+ifrikiya_admin_ajouter_ecrivain:
+    pattern:  /ecrivains/ajouter
+    defaults: { _controller: ifrikiyaAdminBundle:AdminEcrivains:ajouter }
+ifrikiya_admin_modifier_ecrivain:
+    pattern:  /ecrivains/modifier/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminEcrivains:modifier }
+    requirements:
+ifrikiya_admin_supprimer_ecrivain:
+    pattern:  /ecrivains/supprimer/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminEcrivains:supprimer }
+    requirements:
+        id:  \d+
+ifrikiya_admin_collections:
+    pattern:  /collections
+    defaults: { _controller: ifrikiyaAdminBundle:AdminCollections:acceuil }
+ifrikiya_admin_ajouter_collection:
+    pattern:  /collections/ajouter
+    defaults: { _controller: ifrikiyaAdminBundle:AdminCollections:ajouter } 
+ifrikiya_admin_modifier_collection:
+    pattern:  /collections/modifier/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminCollections:modifier } 
+    requirements:
+        id:  \d+ 
+ifrikiya_admin_supprimer_collection:
+    pattern:  /collections/supprimer/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminCollections:supprimer } 
+    requirements:
+        id:  \d+           
+ifrikiya_admin_images:
+    pattern:  /images
+    defaults: { _controller: ifrikiyaAdminBundle:AdminImages:acceuil }
+ifrikiya_admin_ajouter_image:
+    pattern:  /images/ajouter
+    defaults: { _controller: ifrikiyaAdminBundle:AdminImages:ajouter }
+ifrikiya_admin_modifier_image:
+    pattern:  /images/modifier/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminImages:modifier }
+    requirements:
+        id:  \d+
+ifrikiya_admin_supprimer_image:
+    pattern:  /images/supprimer/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminImages:supprimer }
+    requirements:
+        id:  \d+
+ifrikiya_admin_abonnes:
+    pattern:  /abonnes
+    defaults: { _controller: ifrikiyaAdminBundle:AdminAbonnes:acceuil }
+ifrikiya_admin_ajouter_abonne:
+    pattern:  /abonnes/ajouter
+    defaults: { _controller: ifrikiyaAdminBundle:AdminAbonnes:ajouter }
+ifrikiya_admin_modifier_abonne:
+    pattern:  /abonnes/modifier/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminAbonnes:modifier }
+    requirements:
+        id:  \d+
+ifrikiya_admin_supprimer_abonne:
+    pattern:  /abonnes/supprimer/{id}
+    defaults: { _controller: ifrikiyaAdminBundle:AdminAbonnes:supprimer }
+    requirements:
+        id:  \d+
+ifrikiya_admin_users:
+    pattern:  /users
+    defaults: { _controller: ifrikiyaAdminBundle:AdminUsers:acceuil }        

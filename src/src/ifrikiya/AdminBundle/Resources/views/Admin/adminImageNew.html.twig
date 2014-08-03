@@ -1,0 +1,19 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration image| ajout{% endblock %}
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ 
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+   <h1>Ajout d'une image</h1>
+   <form action="{{ path('ifrikiya_admin_ajouter_image') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" />
+</form>
+ {% endif %}
+ {% endblock %}

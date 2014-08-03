@@ -1,0 +1,66 @@
+ifrikiya_site_homepage:
+    pattern:  /hello
+    defaults: { _controller: ifrikiyaSiteBundle:Default:index }
+ifrikiya_site_acceuil:
+    pattern:  /
+    defaults: { _controller: ifrikiyaSiteBundle:Site:acceuil }
+ifrikiya_site_recherche:
+    pattern:  /recherche
+    defaults: { _controller: ifrikiyaSiteBundle:Site:recherche }
+ifrikiya_site_recherche_auteur:
+    pattern:  /recherche/auteur
+    defaults: { _controller: ifrikiyaSiteBundle:Site:rechercheAuteur }
+ifrikiya_site_recherche_livre:
+    pattern:  /recherche/livre
+    defaults: { _controller: ifrikiyaSiteBundle:Site:rechercheLivre }
+ifrikiya_site_catalogue:
+    pattern:  /catalogue
+    defaults: { _controller: ifrikiyaSiteBundle:Site:catalogue }
+ifrikiya_site_voir_livre:
+    pattern:  /voir_livre/{id}
+    defaults: { _controller: ifrikiyaSiteBundle:Site:voirlivre }
+    requirements:
+        id:  \d+
+ifrikiya_site_ecrivains:
+    pattern:  /ecrivains
+    defaults: { _controller: ifrikiyaSiteBundle:Site:ecrivains }
+ifrikiya_site_un_ecrivain:
+    pattern:  /ecrivain/{id}
+    defaults: { _controller: ifrikiyaSiteBundle:Site:unecrivain }
+    requirements:
+        id:  \d+
+ifrikiya_site_collection:
+    pattern:  /collection
+    defaults: { _controller: ifrikiyaSiteBundle:Site:collection }
+ifrikiya_site_voir_collection:
+    pattern:  /collection/{id}
+    defaults: { _controller: ifrikiyaSiteBundle:Site:voirCollection }
+    requirements:
+        id:  \d+
+ifrikiya_site_genre:
+    pattern:  /genre
+    defaults: { _controller: ifrikiyaSiteBundle:Site:genre }
+ifrikiya_site_voir_genre:
+    pattern:  /genre/{id}
+    defaults: { _controller: ifrikiyaSiteBundle:Site:voirGenre }
+    requirements:
+        id:  \d+    
+ifrikiya_site_voir_livre:
+    pattern:  /livre/{id}
+    defaults: { _controller: ifrikiyaSiteBundle:Site:voirLivre }
+    requirements:
+        id:  \d+ 
+ifrikiya_site_ouvre_auteur:
+    pattern:  /livresauteur/{id}
+    defaults: { _controller: ifrikiyaSiteBundle:Site:voirLivreAuteur }
+    requirements:
+        id:  \d+
+ifrikiya_site_construction:
+    pattern:  /construction
+    defaults: { _controller: ifrikiyaSiteBundle:Site:construction }
+ifrikiya_site_recherche_detaillee:
+    pattern: /details
+    defaults: { _controller: ifrikiyaSiteBundle:Recherche:traitementRecherche }
+ifrikiya_site_mail_form:
+    pattern: /mail
+    defaults: { _controller:ifrikiyaSiteBundle:Mail:formMail }

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}ifrikiya!{% endblock %}</title>
+        {% block stylesheets %}
+		  <link rel="stylesheet" href="{{ asset('bundles/ifrikiyasite/css/style_global.css') }}" type="text/css" />
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="" />
+		{% block javascript %}
+		<script language="javascript">
+
+     imgPath = new Array;
+
+SiClickGoTo = new Array;
+
+version = navigator.appVersion.substring(0,1);
+
+if (version >= 3)
+
+{
+
+	i0 = new Image;
+
+	i0.src ="{{ asset('bundles/ifrikiyasite/images/livres/cameroun.jpg') }}";
+
+	SiClickGoTo[0] = "#";
+
+	imgPath[0] = i0.src;
+
+	i1 = new Image;
+
+	i1.src = "{{ asset('bundles/ifrikiyasite/images/livres/bakassi.jpg') }}";
+
+	SiClickGoTo[1] = "#";
+
+	imgPath[1] = i1.src;
+
+	i2 = new Image;
+
+	i2.src = "{{ asset('bundles/ifrikiyasite/images/livres/le cimetiere.jpg') }}";
+
+	SiClickGoTo[2] = "Lien2";
+
+	imgPath[2] = i2.src;
+
+}
+
+a = 0;
+
+function StartAnim()
+
+{
+
+	if (version >= 3)
+
+	{
+
+		document.write('<a href="#" onclick="ImgDest();return(false)"><img src="../images/livres/cameroun.jpg" border="0" alt="Menu" name="defil" /></a>');
+
+		defilimg()
+
+	}
+
+	else
+
+	{
+
+		document.write('<a href="#"><img src=""{{ asset('bundles/ifrikiyasite/images/livres/bakassi.jpg') }}";" border="0" /></a>')
+
+	}
+
+}
+
+function ImgDest()
+
+{
+
+	document.location.href = SiClickGoTo[a-1];
+
+}
+
+function defilimg()
+
+{
+
+	if (a == 2)
+
+	{
+
+		a = 0;
+
+	}
+
+	if (version >= 3)
+
+	{
+
+		document.defil.src = imgPath[a];
+
+		tempo3 = setTimeout("defilimg()",10000);
+
+		a++;
+
+	}
+
+}
+
+</script>
+		{% endblock %}
+    </head>
+    <body>
+	    <div id="container">
+	     <div id="content">
+		  <div id="headerlogo" >
+		     <table height="140px"  width="990px">
+                <tbody>
+                    <tr width="880px">
+                        <td width="276px">
+                          <a href="{{ path('ifrikiya_site_acceuil') }}"><div class="image"></div></a>
+                        </td>
+                        <td width="392px">
+                         <div class="logotext">
+                            <h1><span class="text"><b>Editions</b> <em>Ifrikiya</em></span></h1>
+                         </div>
+                        </td>
+                        <td width="160px">
+                          <div class="cadre"><script language="javascript">StartAnim();</script></div>
+                        </td>
+                    </tr>
+                </tbody>
+			 </table>
+		  </div>
+		
+		
+		   <div id="menu">
+              <ul>
+                <li><a href="{{ path('ifrikiya_admin_acceuil:') }}">Administrateur?</a></li>
+                <li><a href="{{ path('ifrikiya_auteurs_acceuil') }}">Espace auteurs</a></li>
+                <li><a href="{{ path('ifrikiya_site_acceuil') }}">Espace abonnées</a></li>
+                <li><a href="{{ path('ifrikiya_site_catalogue') }}">Catalogue</a></li>
+                <li><a href="{{ path('ifrikiya_site_acceuil') }}">Nos Collections</a></li>
+                <li><a href="{{ path('ifrikiya_site_ecrivains') }}">Nos Auteurs</a></li>
+                <li><a href="{{ path('ifrikiya_site_acceuil') }}">FAQ</a></li>
+                <li><a href="{{ path('ifrikiya_site_acceuil') }}">Insertion</a></li>
+              </ul>
+           </div>
+           <div id="feature"></div>
+		   <div id="main">
+		     <table width="100%" cellspacing="1px" cellpadding="1px" border="0">
+                <tbody>
+				    <tr valign="top" >
+                        <td width="780">
+						  {% block contenu %}
+						  {% endblock %}
+						</td>
+						<td width="180" height="704" bgcolor="#7599cf">
+						    <div id="rigth_component">
+                                <div class="moduletable_menutop">
+                                    <div class="moduletable_auteurs">
+                                       <h3>Espace Auteurs</h3>
+                                        <table width="100%" cellspacing="1" cellpadding="0" border="0">
+                                          <tbody>
+                                            <tr>
+                                              <td nowrap="nowrap">
+                                                <a class="mainlevel" href="#">Accédez à votre espace</a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                    </div> 
+                                    <div class="moduletable_compte">
+                                       <h3> Mon compte</h3>
+                                        <div height= "50px">
+                                         <form id="login" name="login" method="post" action="#">
+                                           <label for="username_vmlogin">Identifiant</label>
+                                           <br></br>
+                                           <input id="username_vmlogin" class="inputbox" type="text" name="username" size="12"></input>
+                                           <br></br>
+                                           <label for="password_vmlogin">Mot de passe</label>
+                                           <br></br>
+                                           <input id="password_vmlogin" class="inputbox" type="password" name="passwd" size="12"></input>
+                                           <br></br>
+                                           <input type="hidden" value="yes" name="remember"></input><br>
+                                           </br><input class="button" type="submit" name="Login" value="Se connecter"></input>
+                                            <ul>
+                                              <li><a href="/component/user/reset">Perdu votre mot de passe ?</a></li>
+                                              <li><a href="/component/user/remind">Oublié votre identifiant ?</a></li>
+                                              <li>Pas encore de compte?
+                                                <a href="/catalogue?page=shop.registration">Inscription</a>
+                                              </li>
+                                            </ul>
+                                            <input type="hidden" name="op2" value="login"></input>
+                                            <input type="hidden" name="return" value="L2NhdGFsb2d1ZT9wYWdlPXNob3AuYnJvd3Nl"></input>
+											<input type="hidden" value="1" name="869a0315d5f9853f742d56135a0e815b"></input>
+                                          </form>
+                                        </div>
+                                    </div>
+ 
+                                    <div class="moduletable_genres">
+                                         <h3> Genre littéraire</h3>
+                                          <!-- Begin menu -->
+                                            <div class="wrap">
+                                                <div class="menu_genre">
+                                                   <table cellspacing="0" cellpadding="0" border="0">
+                                                     <tbody>
+                                                        <tr>
+                                                          <td><a id="menu1" class="mainlevelshop_cat" href="#"> Romans </a></td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td><a id="menu2" class="mainlevelshop_cat" href="#">Histoire</a></td>
+		                                                </tr>
+		                                                <tr>
+		                                                  <td><a id="menu3" class="mainlevelshop_cat" href="#3">Poésie</a>
+														  </td>
+				                                        </tr>
+				                                        <tr>
+				                                          <td><a id="menu6" class="mainlevelshop_cat" href="#">Nouvelles</a>
+														  </td>
+				                                        </tr>
+				                                        <tr>
+				                                          <td><a id="menu7" class="mainlevelshop_cat" href="#">Théâtre</a>
+														  </td>
+				                                        </tr>
+				                                        <tr>
+				                                          <td><a id="menu8" class="mainlevelshop_cat" href="#">Autobiographie/Témoignages</a></td>
+				                                        </tr>
+						                                <tr>
+						                                   <td><a id="menu9" class="mainlevelshop_cat" href="#">Récits</a></td>
+						                                </tr>
+						                                <tr>
+						                                   <td><a id="menu10" class="mainlevelshop_cat" href="#">Essais</a></td>
+								                        </tr>
+								                        <tr>
+								                           <td><a id="menu11" class="mainlevelshop_cat" href="#">Guide pratique</a></td>
+								                        </tr>
+								                        <tr>
+								                           <td><a id="menu12" class="mainlevelshop_cat" href="#">Art et Découverte</a></td>
+								                        </tr>
+								                        <tr>
+								                          <td><a id="menu13" class="mainlevelshop_cat" href="#">Policier</a></td>
+								                        </tr>
+								                        <tr>
+								                          <td><a id="menu14" class="mainlevelshop_cat" href="#">SF/Fantaisie</a></td>
+								                        </tr>
+								                        <tr>
+								                          <td><a id="menu15" class="mainlevelshop_cat" href="#">Contes</a></td>
+								                        </tr>
+								                        <tr>
+								                          <td><a id="menu16" class="mainlevelshop_cat" href="#">Jeunesse</a></td>
+								                        </tr>
+								                        <tr>
+										                  <td><a id="menu17" class="mainlevelshop_cat" href="#">Spiritualité</a></td>
+										                </tr>
+										              </tbody>
+										            </table>
+										        </div>
+										    </div>
+									</div>
+								</div>
+						    </div>
+
+						</td>
+					</tr>
+				</tbody>
+             </table
+             
+           </div>
+          <div id="copyright">Copyright www.Ifrikiya.com © 2013 |Tous droits reservés.</div>		   
+		</div>
+        
+    </body>
+</html>

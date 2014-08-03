@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+
+droite, content, gauche
+{
+	display:inline;
+	zoom: 1;
+}
+
+.present
+{
+	display:inline;
+	zoom: 1;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Livres" table="livres">
+    <id name="idlivre" type="integer" column="idlivre">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titre" type="string" column="titre" length="45" nullable="false"/>
+    <field name="annee" type="string" column="annee" length="45" nullable="true"/>
+    <field name="presentation" type="text" column="presentation" nullable="true"/>
+    <field name="prixUnitaireFcfa" type="float" column="prix_unitaire_fcfa" nullable="true"/>
+    <field name="format" type="string" column="format" length="45" nullable="true"/>
+    <field name="prixUnitaireEuro" type="float" column="prix_unitaire_euro" nullable="true"/>
+    <many-to-one field="idGenre" target-entity="Genres">
+      <join-columns>
+        <join-column name="id_genre" referenced-column-name="idgenres"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idCollection" target-entity="Collections">
+      <join-columns>
+        <join-column name="id_collection" referenced-column-name="idcollections"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="idAbonnes" target-entity="Abonnes" inversed-by="idLivre">
+      <join-table name="note_livre">
+        <join-columns>
+          <join-column name="id_livre" referenced-column-name="idlivre"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_abonnes" referenced-column-name="idabonnes"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="idEcrivain" target-entity="Ecrivains" inversed-by="idLivre">
+      <join-table name="auteurs">
+        <join-columns>
+          <join-column name="id_livre" referenced-column-name="idlivre"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_ecrivain" referenced-column-name="idecrivains"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

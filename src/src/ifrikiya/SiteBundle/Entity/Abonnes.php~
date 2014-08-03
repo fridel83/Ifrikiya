@@ -1,0 +1,88 @@
+<?php
+
+namespace ifrikiya\SiteBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Abonnes
+ *
+ * @ORM\Table(name="abonnes")
+ * @ORM\Entity
+ */
+class Abonnes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idabonnes", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idabonnes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=45, nullable=true)
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pseudo", type="string", length=45, nullable=true)
+     */
+    private $pseudo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mdp", type="string", length=45, nullable=true)
+     */
+    private $mdp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone1", type="string", length=45, nullable=true)
+     */
+    private $telephone1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone2", type="string", length=45, nullable=true)
+     */
+    private $telephone2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=45, nullable=true)
+     */
+    private $adresse;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Livres", mappedBy="idAbonnes")
+     */
+    private $idLivre;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idLivre = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

@@ -1,0 +1,35 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration Livres{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ {% block stylesheets %}
+   {{ parent() }}
+ {% endblock %}
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+ <div id="admin">
+   <h1><a class="add-link" href="{{ path('ifrikiya_admin_ajouter_livre') }}">Ajouter un livre</a></h1>
+   <table>
+    <tr>
+        <th>livre</th>
+        <th>Actions</th>
+    </tr>
+    {% for livre in livres %}
+    <tr>
+        <td>{{ livre.titre }}</td>
+        <td>
+            <a href="{{ path('ifrikiya_admin_modifier_livre', { 'id': livre.idlivre }) }}">Editer</a> -
+            <a href="{{ path('ifrikiya_admin_supprimer_livre', { 'id': livre.idlivre }) }}">Supprimer</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+ </div>
+ {% endif %}
+ {% endblock %}

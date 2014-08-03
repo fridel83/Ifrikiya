@@ -1,0 +1,14 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+
+
+{% block corps %}
+<div id="erreur">
+   <h4>cette page du site est en construction</h4>
+   <p>veuillez nous en excuser et revenir bientôt...bonne navigation!</p>
+   <p><a href=" {{ path('ifrikiya_site_acceuil') }}">retour acceuil</a></p>
+ </div>  
+{% endblock %}

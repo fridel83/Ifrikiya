@@ -1,0 +1,32 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration Collection{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+ <div id="admin">
+   <h1><a class="add-link" href="{{ path('ifrikiya_admin_ajouter_collection') }}">Ajouter une collection</a></h1>
+   <table>
+    <tr>
+        <th>Collections</th>
+        <th>Actions</th>
+    </tr>
+    {% for collection in collections %}
+    <tr>
+        <td>{{ collection.libelle }}</td>
+        <td>
+            <a href="{{ path('ifrikiya_admin_modifier_collection', { 'id': collection.idcollections }) }}">Editer</a> -
+            <a href="{{ path('ifrikiya_admin_supprimer_collection', { 'id': collection.idcollections }) }}">Supprimer</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+ {% endif %}
+ {% endblock %}

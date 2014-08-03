@@ -1,0 +1,34 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration ecrivains{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ 
+ 
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+ <div id="admin">
+   <h1><a class="add-link" href="{{ path('ifrikiya_admin_ajouter_ecrivain') }}">Ajouter un ecrivain</a></h1>
+   <table>
+    <tr>
+        <th>ecrivains</th>
+        <th>Actions</th>
+    </tr>
+    {% for ecrivain in ecrivains %}
+    <tr>
+        <td>{{ ecrivain.NomPrenom }}</td>
+        <td>
+            <a href="{{ path('ifrikiya_admin_modifier_ecrivain', { 'id': ecrivain.idecrivains }) }}">Editer</a> -
+            <a href="{{ path('ifrikiya_admin_supprimer_ecrivain', { 'id': ecrivain.idecrivains }) }}">Supprimer</a>
+        </td>
+    </tr>
+    {% endfor %}
+  </table>
+ </div>
+ {% endif %}
+ {% endblock %}

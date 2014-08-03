@@ -1,0 +1,44 @@
+{% extends "::modelcatalogue.html.twig" %}
+ 
+ 
+ {% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+
+{% block title %}
+   {{ genre.libelle }}!
+{% endblock %}
+
+
+
+{% block corps %}
+  <div id="titre">
+     <h2> {{ genre.libelle }}!</h2>
+  </div>
+  
+  {% if liste_livre is empty %}
+   <div id="genre_vide">
+    <p> Aucune Parution dans ce genre.</p>
+   </div> 
+  {% endif %}
+  
+  
+  {% for livre in liste_livre %}
+
+  <div id="cadre">
+    <div class="cadre_image">
+      
+      <a href="{{ path('ifrikiya_site_voir_livre', {'id':livre[0].idlivre }) }}"><img src="{{ asset('bundles/ifrikiyasite/images/livres/'~livre[1])}}" /></a>
+    </div>
+    <div class="present">
+      <h3><a href="{{ path('ifrikiya_site_voir_livre', {'id':livre[0].idlivre }) }}">{{ livre[0].titre }}</a></h3>
+      <p> paru en: {{ livre[0].annee }}</p>
+      <p>prix: {{ livre[0].prixUnitaireFcfa }} fcfa,  {{ livre[0].prixUnitaireEuro }} euros</p>
+       <p><a href="{{ path('ifrikiya_site_voir_livre', {'id':livre[0].idlivre }) }}">voir ce livre</a></p>
+    </div>
+    
+  </div>
+  <hr/>
+  {% endfor %}
+{% endblock %}     

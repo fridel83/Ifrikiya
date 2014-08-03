@@ -1,0 +1,26 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ {% block stylesheets %}
+   {{ parent() }}
+ {% endblock %}
+ 
+
+ 
+ {% block corps %}
+   
+     {% trans_default_domain 'FOSUserBundle' %}
+
+     {% block fos_user_content %}
+     <div id="erreur">
+        <h3>vous essayez d'acceder à une espace à accès restreint<h3>
+     {% if error %}
+       <div>{{ error|trans }}</div>
+    {% endif %}
+     {% include "ifrikiyaUserBundle:Security:connexion.html.twig" %}
+    </div>
+   {% endblock fos_user_content %}
+ {% endblock %}

@@ -1,0 +1,15 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     mysql51-99.perso
+    database_port:     ~
+    database_name:     editionsedifrik
+    database_user:     editionsedifrik
+    database_password: FRIDEL83
+
+    mailer_transport:  smtp
+    mailer_host:       smtp.editionsifrikiya.org
+    mailer_user:       idriss.eliguene@editionsifrikiya.org
+    mailer_password:   FRIDEL83
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt

@@ -1,0 +1,76 @@
+@CHARSET "ISO-8859-1";
+
+.home
+{
+	display:inline-block;
+    zoom: 1;
+}
+.texte
+{
+	display:inline-block;
+    zoom: 1;
+}
+.connexion
+{
+	display:inline-block;
+    zoom: 1;
+}
+.categorie_abonne
+{
+	display:inline-block;
+    zoom: 1;
+}
+
+.categorie_auteur
+{
+	display:inline-block;
+    zoom: 1;
+}
+
+#footer
+{
+	display:inline-block;
+    zoom: 1;
+}
+
+.categorie_admin
+{
+	display:inline-block;
+    zoom: 1;
+}
+
+.catalogue
+{
+	display:inline-block;
+	zoom: 1;
+}
+
+#pub
+{
+	display:inline-block;
+	zoom: 1;
+}
+
+.collection
+{
+	display:inline-block;
+	zoom: 1;
+}
+
+.nos_auteurs
+{
+	display:inline-block;
+	zoom: 1;
+}
+
+.present
+{
+	display:inline;
+	zoom: 1;
+}
+
+.cadre_image
+{
+	display:inline;
+	zoom: 1;
+}

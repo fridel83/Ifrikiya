@@ -1,0 +1,40 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ 
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+
+ <a href="{{ path('ifrikiya_admin_ecrivains') }}"> 
+  <div id="administration">
+    <p>ecrivains</p>
+  </div>
+ </a>
+ <a href="{{ path('ifrikiya_admin_livres') }}">
+  <div id="administration">
+    <p>livres</p>
+  </div>
+  </a>
+  <a href="{{ path('ifrikiya_admin_collections') }}">
+  <div id="administration">
+    <p>Collection</p>
+  </div>
+  </a>
+  <a href="{{ path('ifrikiya_admin_genres') }}">
+  <div id="administration">
+    <p>Genres</p>
+  </div>
+  </a>
+  <a href="{{ path('ifrikiya_admin_images') }}">
+  <div id="administration">
+    <p>Images</p>
+  </div>
+  </a>
+  {% endif %}
+ {% endblock %}

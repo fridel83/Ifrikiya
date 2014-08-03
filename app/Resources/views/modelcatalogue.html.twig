@@ -1,0 +1,279 @@
+{# src/ifrikiya/SiteBundle/Resources/views/Default/index.html.twig #}
+ 
+<html>
+<head>
+        
+        {% block encodage %}<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />{% endblock %}
+        <title>{% block title %}ifrikiya!{% endblock %}</title>
+        {% block stylesheets %}
+		  <link rel="stylesheet" href="{{ asset('bundles/ifrikiyasite/css/style_catalogue.css') }}" type="text/css" />
+		  <!--[if lte IE 7]>
+          <link rel="stylesheet" href="{{ asset('bundles/ifrikiyasite/css/style_catalogie.css') }}" type="text/css" />
+          <![endif]-->
+		{% endblock %}
+		<link rel="icon" type="image/png" href="{{ asset('bundles/ifrikiyasite/images/favicon.png') }}" />
+		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="{{ asset('bundles/ifrikiyasite/images/favicon.ico') }}" /><![endif]-->
+
+		{% block javascript %}
+		  <script language="javascript">
+		    imgPath = new Array;
+            SiClickGoTo = new Array;
+            version = navigator.appVersion.substring(0,1);
+            if (version >= 3)
+			{
+			   i0 = new Image;
+			   i0.src ="{{ asset('bundles/ifrikiyasite/images/livres/echo du betail.jpg') }}";
+               SiClickGoTo[0] = "#";
+			   imgPath[0] = i0.src;
+			   i1 = new Image;
+			   i1.src = "{{ asset('bundles/ifrikiyasite/images/livres/mistiriijo.jpg') }}";
+               SiClickGoTo[1] = "#";
+               imgPath[1] = i1.src;
+               i2 = new Image;
+               i2.src = "{{ asset('bundles/ifrikiyasite/images/livres/la montagne brûlé.jpg') }}";
+               SiClickGoTo[2] = "Lien2";
+               imgPath[2] = i2.src;
+			   
+			}
+			a = 0;
+			function StartAnim()
+			{
+			    if (version >= 3)
+				{
+				   document.write('<a href="#" onclick="ImgDest();return(false)"><img src="../images/livres/cameroun.jpg" border="0" alt="Menu" name="defil" /></a>');
+				   defilimg()
+				}
+				else
+				{
+				   document.write('<a href="#"><img src=""{{ asset('bundles/ifrikiyasite/images/livres/bakassi.jpg') }}";" border="0" /></a>')
+				}
+		    }
+            function ImgDest()
+            {
+			   document.location.href = SiClickGoTo[a-1];
+			}
+            function defilimg()
+			{
+			if (a == 3)
+			{
+			   a = 0;
+			}
+            if (version >= 3)
+			{
+			   document.defil.src = imgPath[a];
+               tempo3 = setTimeout("defilimg()",10000);
+               a++;
+			}
+		}
+		
+		
+		sfHover = function() {
+        var sfEls = document.getElementById("menu").getElementsByTagName("LI");
+        for (var i=0; i<sfEls.length; i++) {
+                sfEls[i].onmouseover=function() {
+                        this.className+=" sfhover";
+                }
+                sfEls[i].onmouseout=function() {
+                        this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+                }
+        }
+        }
+        if (window.attachEvent) window.attachEvent("onload", sfHover);
+       </script>
+	  {% endblock %}
+    </head>
+  <body>
+    
+    <div id="wrapper">
+	  <div id="header">
+			 <a href="{{ path('ifrikiya_site_acceuil') }}">
+			 <div class="home">
+			 <img src="{{ asset('bundles/ifrikiyasite/images/home.jpg') }}" />	
+			 </div>
+			 </a>
+			{% block categorie %}
+			 <a href="{{ path('ifrikiya_admin_acceuil') }}">
+	         <div class="categorie_admin">
+		       <p>ADMINISTRATEUR</p>
+		     </div>
+			 </a>
+			 <a href="{{ path('ifrikiya_auteurs_acceuil') }}">
+		     <div class="categorie_auteur">
+		       <p>AUTEUR</p>
+		     </div>
+			 </a>
+			 <a href="{{ path('ifrikiya_site_construction') }}">
+		     <div class="categorie_abonne">
+		       <p>ABONNE</p>
+		     </div>
+			 </a>
+			{% endblock %}
+			 <div class="recherche">
+			   <form action="{{ path('ifrikiya_site_recherche') }}" method="post">
+			    <label>RECHERCHE :</label>
+			    <select name="id" size="1">
+				 <option value="1">auteurs</option>
+				 <option  value="2" selected>livre</option>
+				</select>
+				 <INPUT TYPE="submit" NAME="nom" VALUE="ok">
+			    </form>	 
+			 </div>
+		   
+		   <div id="headerlogo">
+		     <div class="texte">
+			  {% block connect %}
+			  <p>la maison d'édition Camerounaise</p>
+			  <!--
+			  {% for key, message in app.session.flashbag.all() %}
+              <div class="alert alert-{{ key }}">
+              {{ message|trans({}, 'FOSUserBundle') }}
+             </div>
+             {% endfor %}
+             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+               bienvenu {{ app.user.username }} </br> <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+             {% else %}
+			  <div id="connect">
+              <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+			  </div>
+             {% endif %}
+			 -->
+			  {% endblock %}
+			 </div>
+		   </div>
+	  </div>
+	  
+	  <div id="menu">
+	  {% block menu %}
+		<ul>
+		  <li>
+		    <a href="{{ path('ifrikiya_site_catalogue') }}">CATALOGUE</a>
+		  </li>
+		  <li>
+		     <a href="{{ path('ifrikiya_site_collection') }}">COLLECTIONS</a>
+		  </li>
+		  <li>
+		    <a href="{{ path('ifrikiya_site_ecrivains') }}">AUTEURS</a>
+		  </li>
+		  <li>
+		    <a href="{{ path('ifrikiya_site_genre') }}">GENRES</a>
+		  </li>
+		</ul>
+      {% endblock %}		
+	  </div>
+	  
+	  {% block contenu %}
+	  <div id="left">
+	   <div id="recherche_detaille">
+	    <h3>recherche détaillée</h3>
+	   <!--
+	     <h3>recherche détaillée</h3>
+		  <form action="{{ path('ifrikiya_site_recherche_detaillee') }}" method="post">
+		    <table>
+			  <tr>
+			    <td>
+				  <label for="titre">Titre :</label>
+				</td>
+				<td>
+				  <input type="text" name="titre" id="titre" placeholder="Titre" />
+				</td>
+			  </tr>
+			  <tr>
+			    <td>
+				  <label for="auteur">Auteur :</label>
+				</td>
+				<td>
+				  <input type="text" name="auteur" id="auteur" placeholder="Auteur"/>
+				</td>
+			  </tr>
+			  <tr>
+			    <td>
+				  <label for="annee">Année :</label>
+				</td>
+				<td>
+				  <input type="text" name="annee" id="auteur" placeholder="Année"/>
+				</td>
+			  </tr>
+			    
+			</table>
+			  <p><input type="submit" value="rechercher" /></p>
+		  </form>
+		  -->
+		  {% render(controller('ifrikiyaSiteBundle:Recherche:recherche')) %}
+	   </div>
+	   <div id="user">
+	       {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              <p>bienvenu {{ app.user.username }}<p> </br> <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></br>
+			      <a href="{{ path('fos_user_change_password') }}">changer de mot de passe</a></br>
+				  <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+           {% else %}
+	      {% render(controller('ifrikiyaUserBundle:Security:LoginBis')) %}
+		  {% endif %}
+	   </div>
+	 </div>
+	  
+	  <div id="contenu">
+	   
+	    <div class="genre">
+		  {% block left %}
+		   
+		 {% endblock %}
+	    </div>
+		
+		<div class="corps">
+		 {% block corps %}
+		   
+		  {% endblock %}
+		</div>
+		
+	 </div>
+	 
+	 {% endblock %}
+	 
+	 <div id="pub">
+	  <div id="pub_haut">
+	     <p>parutions récentes</p>
+	  </div>
+	  <div id="livre">
+	   <script language="javascript">StartAnim();</script>
+	  </div>
+	 </div>	
+	 
+	</div>
+	<div id="footer">
+	  <p>c@pyright <a href=" {{ path ('ifrikiya_site_acceuil') }}">ww.editionsifrikiya.org</a> octobre 2013  tous droits reservés</p>
+	  <p>ce site a été entièrement conçu et réaliser par idriss ELIGUENE idriss.eliguene@gmail.com grâce au tutoriel de <a href="http://fr.openclassrooms.com/informatique/cours/developpez-votre-site-web-avec-le-framework-symfony2">open classroom</a></p> 
+	  <div id="contact">
+	    <h3>contact</h3>
+		<ul>
+		  <li><a href="{{ path('ifrikiya_site_mail_form') }}">administrateur</a></li>
+		  <li><a href="{{ path('ifrikiya_site_mail_form') }}">concepteur</a></li>
+		<ul>
+	  </div>
+	  <div id="lien_multi">
+	    <h3>multimedia</h3>
+		 <ul>
+		   <li><a href="http://www.afrik.com/article20259.html">Afrik.com</a></li>
+		   <li><a href="http://www.afrilivres.net/fiche_editeur.php?e=3700">Afrilivres</a></li>
+		   <li><a href="http://www.africultures.com/php/?nav=structure&no=3700">Africultures</a></li>
+		   <li><a href="http://www.editafrica.com/jean-claude-awono-nouveau-directeur-des-editions-ifrikiya/">EditAfrika.com</a></li>
+		 </ul>
+	  </div>
+	  <div id="site">
+	  
+	    <h3>site</h3>
+		<ul>
+		  <li><a href="{{ path('ifrikiya_site_acceuil') }}">acceuil</a></li>
+		  <li><a href="{{ path('ifrikiya_site_catalogue') }}">catalogue</a></li>
+		  <li><a href="{{ path('ifrikiya_site_ecrivains') }}">auteurs</a></li>
+		  <li><a href="{{ path('ifrikiya_site_collection') }}">collections</a></li>
+		  <li><a href="{{ path('ifrikiya_site_genre') }}">genres</a></li>
+		</ul>
+		</div>
+	</div>
+	{#
+   <script type="text/javascript" src="{{ asset('bundle/ifrikiyasite/js/lib/jquery.min.js }}" charset="iso_8859-1"></script>
+   <script>window.jQuery || document.write('<script src="/js/libs/jquery.min.js"></script>')</script>
+   <script>$('body p').html('Hello World');</script>
+   #}
+  </body>
+</html>

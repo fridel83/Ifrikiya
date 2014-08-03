@@ -1,0 +1,7 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block corps %}
+   {% for user in users %}
+      {{ user.username~' '~user.role }}</br>
+   {% endfor %}
+{% endblock %}

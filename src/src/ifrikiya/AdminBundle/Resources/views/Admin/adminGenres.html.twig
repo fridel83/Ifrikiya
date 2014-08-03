@@ -1,0 +1,33 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration genres{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+ <div id="admin">
+   <h1><a class="add-link" href="{{ path('ifrikiya_admin_ajouter_genre') }}">Ajouter un genre</a></h1>
+   <table>
+    <tr>
+        <th>genre</th>
+        <th>Actions</th>
+    </tr>
+    {% for genre in genres %}
+    <tr>
+        <td>{{ genre.libelle }}</td>
+        <td>
+            <a href="{{ path('ifrikiya_admin_modifier_genre', { 'id': genre.idgenres }) }}">Editer</a> -
+            <a href="{{ path('ifrikiya_admin_supprimer_genre', { 'id': genre.idgenres }) }}">Supprimer</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+ {% endif %}
+ {% endblock %}

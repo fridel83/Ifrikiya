@@ -1,0 +1,7 @@
+parameters:
+#    ifrikiya_user.example.class: ifrikiya\UserBundle\Example
+
+services:
+#    ifrikiya_user.example:
+#        class: %ifrikiya_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

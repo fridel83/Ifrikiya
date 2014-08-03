@@ -1,0 +1,410 @@
+@CHARSET "ISO-8859-1";
+
+html
+{
+
+    
+        background: -webkit-radial-gradient(white,#AEE1B0); /*#99CC9B Vert possible*/
+        background: -moz-radial-gradient(white,#AEE1B0); 
+        background: -ms-radial-gradient(white,#AEE1B0); 
+        background: -o-radial-gradient(white,#AEE1B0); 
+        background: radial-gradient(white,#AEE1B0);
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='white', endColorstr='#AEE1B0' );
+}
+
+body
+{
+        background-color : #e6e6e6;
+        background-repeat: no-repeat;
+        width: 100%;
+        margin: 40px auto;
+}
+
+*body{ /*Special body for the worst navigator : IE*/
+         background-color : #f6fafb;
+         width: 100%;
+         margin: 40px auto;
+         background-position-x: 150px;
+         background-position-y: 30px;
+}
+
+#container 
+{ 
+  width:100%; !important;
+  background-color : #f6fafb;
+  border: 1px solid bleu;
+  z-index: 0;
+  display: block;
+}
+
+html>body #container {
+height: auto;
+min-height: 735px;
+} 
+
+.gauche
+{
+	display:inline-block;
+	margin-left:0px;
+	width: 200px;
+	border: 1px solid green;
+	height:auto;
+	float:left;
+}
+
+.droite
+{
+	display:inline-block;
+	margin-left:5px;
+	border: 1px solid yellow;
+	width: 200px;
+	height:auto;
+	float:left;
+}
+
+
+#content
+{
+   
+    display:block;
+    margin-left:5px;
+	width: 1000px;
+	background:url("../images/fond.png") center center;
+	border: 1px solid red;
+	height:auto;
+	float:left;
+    
+}
+
+html>body #content {
+height: auto;
+min-height: 5em;
+} 
+
+
+ .menu 
+{ 
+  background-color: #394753;
+  margin:0;
+  width: 1000px;
+  display:block;
+  float:left;
+  height: 26px;
+  color: #fff;
+  z-index: 1;
+  border:0;
+  border-style:solid;
+ }
+ 
+
+.menu ul 
+{
+  margin: 0; 
+  padding: 0; 
+  list-style: none; 
+  float:left; 
+  background:#fff;
+  right:2px;
+  border-right:1px solid #000;
+
+ }
+
+.menu ul li 
+{ 
+  margin: 0; 
+  padding: 0;
+  float:left;
+  text-align: justify; 
+}
+
+.menu ul li a 
+{ 
+  margin: 0;  
+  display: inline-block;
+  padding: 5px 15px; 
+  background-color: #394753; 
+  color: #fff;
+  border:1px solid #000;
+  border-right: 0; 
+  font: bold 11px Tahoma, sans-serif;
+ }
+
+.menu ul li a:hover 
+{ 
+  background: #fff; 
+  color: #000; 
+ }
+ 
+
+
+.headerlogo 
+ {
+    height: 170px;
+    width: 1000px;
+    background:rgb(118,152,112);
+    border:3px solid black;
+    font-family: arial;
+    font-size: 12px;
+    z-index: 26px;
+    display:block;
+     -moz-border-radius:10px 10;
+     -webkit-border-radius:10px 10;
+     border-radius:10px 10;
+}
+  background: #fff;
+ }
+ 
+ 
+  .logotext
+{  
+	margin: 2px 0px 0px;
+	display:inline-block;
+    margin-top: 2px;
+    margin-right-value: 0px;
+    width: 276px;
+    margin-bottom: 0px;
+    margin-left-value: 0px;
+    margin-left-ltr-source: physical;
+    margin-left-rtl-source: physical;
+    margin-right-ltr-source: physical;
+    margin-right-rtl-source: physical;
+ }
+ 
+ .logotext h1
+ {
+   font-size: 1.3em;
+   font-family: Impact, "Arial Black", Arial, Verdana, sans-serif
+ }
+ .image 
+ {
+    background: url("../images/logo.jpg") no-repeat scroll 0% 0% white;
+    width: 276px;
+    height: 163px;
+    margin-top: 0px;
+    margin-left: 0px;
+    float: left;
+    -moz-border-radius:10px 0;
+-webkit-border-radius:10px 0;
+border-radius:10px 0;
+position:relative;
+}
+
+
+
+.cadre
+{
+    display: inline-block;
+    margin-rigth-value: 0px;
+    width: 160px;
+    height: 163px;
+}
+
+
+ 
+.feature 
+{ 
+  background: #000 url("header.jpg");
+  width: 1000px;
+  height: 15px;
+  margin: 1px 0;
+  text-align: center;
+  position: relative;
+  z-index:0; 
+  clear: right; 
+ }
+ 
+ *html .feature
+ {
+    background-color : #f6fafb;
+  width: 1000px;
+  height: 15px;
+  margin: 1px 0;
+  text-align: center;
+  position: relative;
+  z-index:0; 
+  clear: right; 
+ }
+ 
+ #left
+ {
+ float: left;
+ display:inline-block;
+ border: 1px solid;
+ height:520px;
+ width:280px;
+  background:#eee;
+ }
+ 
+ #left a:hover{
+
+    color : #BBD8FF;
+    transition: 0.5s color;
+}
+
+ #left a{
+
+    color:#399b2e;
+}
+color:#399b2e;
+ 
+ .titre_menu
+ {
+   height:32px;
+   width:90%;
+   border: 1px solid;
+   -moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+   background:#8bf;
+   float:left;
+ }
+ 
+ .titre_menu h3
+ {
+   text-align: center;
+   position: relative;
+   
+ }
+ 
+ .premier
+ {
+   height:32px;
+   width:100%;
+   border: 1px solid;
+   -moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+   float:left;
+   text-align:center;
+   
+ }
+
+.deuxieme
+{
+	height:32px;
+   width:100%;
+   border: 1px solid;
+   -moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+   float:left;
+   text-align:center;
+   background:#DDE7FF;
+	
+}
+
+.troisieme
+{
+	height:150px;
+   width:100%;
+   border: 1px solid;
+   -moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+   float:left;
+   text-align:center;
+   background:#DDE7FF;
+}
+
+ #contenu
+ {
+  float: right;
+  display:inline-block;
+  border: 1px solid;
+  width:650px;
+  height:520px;
+  margin-left : -40px !important;
+  background: #fff;
+ }
+ 
+ 
+ .haut
+{
+	width:650px;
+  height:340px;
+  margin:5px;
+   border: 1px solid;
+   float: right;
+  border: 1px solid;
+  moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+  position: relative;
+   
+}
+
+ 
+/*catalogue*/
+#titre
+{
+	width:537px;
+	height:77spx;
+	background:url("../images/banniere.jpg");
+	margin-left:30px;
+	border:1px solid black;
+	display:block;
+	moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+}
+
+#titre h2
+{
+    text-align: center;
+    color:red;
+}
+
+#cadre
+{
+	width: auto;
+	height:auto;
+	background:rgb(109,111,154);
+	border:1px solid black;
+	margin:5px;
+	pading:2px;
+	display:block;
+	moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+}
+
+.cadre_image
+{
+	width: auto;
+	height:auto;
+	float:left;
+	border:1px solid black;
+	margin:5px;
+	pading:2px;
+	display:inline-block;
+	moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+}
+
+
+ .present
+ {
+    width: 350px;
+	height:250px;
+	background:url("../images/fon3.jpg") no-repeat scroll 0% 0% white;
+	border:1px solid black;
+	margin:5px;
+	pading:2px;
+	display:inline-block;
+	moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+ }
+ 
+.present h3
+{
+    text-align: center;
+    color:green;
+}
+.pres
+{
+	text-align: center;
+    color:red;
+}
+

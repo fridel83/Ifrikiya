@@ -1,0 +1,3 @@
+ifrikiya_abonnees_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ifrikiyaAbonneesBundle:Default:index }

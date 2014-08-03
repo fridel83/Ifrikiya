@@ -1,0 +1,21 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+
+
+{% block title %}Fiche {{ ecrivain.prenom~" "~ecrivain.nom }}!{% endblock %}
+
+{% block corps %}
+ 
+ <div id="cadre">
+    <h1>{{ ecrivain.prenom~" "~ecrivain.nom }}</h1>
+    <p>la fiche de cet auteur sera disponible bientôt, merci et bonne navigation!!!</p>
+    <p><a href="{{ path('ifrikiya_site_ecrivains') }}">retour liste d'ecrivain</a></p>
+    <p><a href="{{ path('ifrikiya_site_acceuil') }}">retour acceuil</a></p>
+    <p><a href="{{ path('ifrikiya_site_ouvre_auteur', { 'id':ecrivain.idecrivains }) }}">voir ses oeuvres</a></p>
+ 
+ </div>
+
+{% endblock %}

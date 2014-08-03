@@ -1,0 +1,7 @@
+parameters:
+#    ifrikiya_auteurs.example.class: ifrikiya\AuteursBundle\Example
+
+services:
+#    ifrikiya_auteurs.example:
+#        class: %ifrikiya_auteurs.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

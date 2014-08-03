@@ -1,0 +1,198 @@
+{# src/ifrikiya/SiteBundle/Resources/views/Default/index.html.twig #}
+ 
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}ifrikiya!{% endblock %}</title>
+        {% block stylesheets %}
+		  <link rel="stylesheet" href="{{ asset('bundles/ifrikiyasite/css/style_design.css') }}" type="text/css" />
+		  
+		{% endblock %}
+		<!--[if lte IE 7]>
+          <link rel="stylesheet" href="{{ asset('bundles/ifrikiyasite/css/style_ie.css') }}" type="text/css" />
+          <![endif]-->
+   
+		{% block javascript %}
+		<script type="text/javascript" src="./competence_xhr.js" charset="iso_8859-1"></script>
+		
+		<script language="javascript">
+
+imgPath = new Array;
+
+SiClickGoTo = new Array;
+
+version = navigator.appVersion.substring(0,1);
+
+if (version >= 3)
+
+{
+
+	i0 = new Image;
+
+	i0.src ="{{ asset('bundles/ifrikiyasite/images/livres/cameroun.jpg') }}";
+
+	SiClickGoTo[0] = "#";
+
+	imgPath[0] = i0.src;
+
+	i1 = new Image;
+
+	i1.src = "{{ asset('bundles/ifrikiyasite/images/livres/bakassi.jpg') }}";
+
+	SiClickGoTo[1] = "#";
+
+	imgPath[1] = i1.src;
+
+	i2 = new Image;
+
+	i2.src = "{{ asset('bundles/ifrikiyasite/images/livres/le cimetiere.jpg') }}";
+
+	SiClickGoTo[2] = "Lien2";
+
+	imgPath[2] = i2.src;
+
+}
+
+a = 0;
+
+function StartAnim()
+
+{
+
+	if (version >= 3)
+
+	{
+
+		document.write('<a href="#" onclick="ImgDest();return(false)"><img src="../images/livres/cameroun.jpg" border="0" alt="Menu" name="defil" /></a>');
+
+		defilimg()
+
+	}
+
+	else
+
+	{
+
+		document.write('<a href="#"><img src="../images/livres/cameroun.jpg" border="0" /></a>')
+
+	}
+
+}
+
+function ImgDest()
+
+{
+
+	document.location.href = SiClickGoTo[a-1];
+
+}
+
+function defilimg()
+
+{
+
+	if (a == 2)
+
+	{
+
+		a = 0;
+
+	}
+
+	if (version >= 3)
+
+	{
+
+		document.defil.src = imgPath[a];
+
+		tempo3 = setTimeout("defilimg()",10000);
+
+		a++;
+
+	}
+
+}
+
+</script>
+		{% endblock %}
+    </head>
+  <body>
+    
+      
+    <div id="container">
+	
+	    <div class="gauche">
+		</div>
+        <div id="content">
+		   
+	      <div class="headerlogo">
+		     <table height="140px"  width="990px">
+                <tbody>
+                    <tr width="880px">
+                        <td width="276px">
+                          <a href="{{ path('ifrikiya_site_acceuil') }}"><div class="image"></div></a>
+                        </td>
+                        <td width="50px">
+                        </td>
+                        <td width="200px">
+                          
+                         <div class="logotext">
+                            
+                            <h1><span class="text"><b>Editions</b> <em>Ifrikiya</em></span></h1>
+                         </div>
+                        </td>
+                        <td>
+                          <!--<div class="facebook"></div>-->
+                        </td width="142px">
+                          
+                        <td width="160px">
+                          <div class="cadre"></div>
+                        </td>
+                    </tr>
+                </tbody>
+			 </table>
+		   </div>
+		    {% block menu %}
+              <div class="menu">
+              <ul>
+                <li><a href="#">Administrateur?</a></li>
+                <li><a href="#">Espace auteurs</a></li>
+                <li><a href="#">Espace abonnées</a></li>
+                <li><a href="#">Catalogue</a></li>
+                <li><a href="#">Nos Collections</a></li>
+                <li><a href="#">Nos Auteurs</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Insertion</a></li>
+                <li><a href="#">nous contacter</a></li>
+              </ul>
+             </div>
+              
+           {% endblock %}
+		   
+		   <div id="left">
+		     	    <div class="titre_menu">
+		      <h3>Genre Litteraires</h4>
+		    </div>
+	
+		    <div class="deuxieme"><a id="menu2" class="mainlevelshop_cat" href="#">Poesie</a></div>
+		    <div class="premier"><a id="menu2" class="mainlevelshop_cat" href="#">Romans</a></div>
+		    <div class="deuxieme"><a id="menu2" class="mainlevelshop_cat" href="#">Nouvelles</a></div>
+		   
+		    <div class="premier"><a id="menu2" class="mainlevelshop_cat" href="#">Bande déssiné</a></div>
+		    <div class="deuxieme"><a id="menu2" class="mainlevelshop_cat" href="#">Essai</a></div>
+		    <div class="premier"><a id="menu2" class="mainlevelshop_cat" href="#">Théatre</a></div>
+		    <div class="deuxieme"><a id="menu2" class="mainlevelshop_cat" href="#">Contes</a></div>
+		    <div class="premier"><a id="menu2" class="mainlevelshop_cat" href="#">Jeunesse</a></div>
+		    <div class="deuxieme"><a id="menu2" class="mainlevelshop_cat" href="#">Spiritualité</a></div>
+			<div class="troisieme"></div>
+		   </div>
+		   <div id="contenu">
+		   {% block contenu %}
+		   {% endblock %}
+		   </div>
+		</div>
+		<div class="droite">
+       </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+
+.haut
+{
+	width:250px;
+  height:240px;
+   border: 1px solid;
+   float: right;
+  border: 1px solid;
+  
+  position: relative;
+   
+}

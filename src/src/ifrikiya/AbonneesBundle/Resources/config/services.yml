@@ -1,0 +1,7 @@
+parameters:
+#    ifrikiya_abonnees.example.class: ifrikiya\AbonneesBundle\Example
+
+services:
+#    ifrikiya_abonnees.example:
+#        class: %ifrikiya_abonnees.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

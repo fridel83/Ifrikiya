@@ -1,0 +1,44 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Resultat de la  recherche{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ {% block stylesheets %}
+   {{ parent() }}
+ {% endblock %}
+ 
+ 
+ {% block corps %}
+ <div id="admin">
+ {% if nbre<1 %}
+   <h3>aucun resultat ne correspond à votre recherche</h3>
+ {% else %}
+   
+    <h3>resultat de votre recherche</h3>
+    {% if nbre==1 %}
+    <p> nous avous {{ nbre }} resultat correspondant à votre recherche<p>
+    {% else %}
+      <p> nous avous {{ nbre }} resultats correspondant à votre recherche<p>
+    {% endif %}
+   <table>
+    <tr>
+        <th>livre</th>
+        <th>Actions</th>
+    </tr>
+    {% for livre in livres %}
+    <tr>
+        <td>{{ livre.titre }}</td>
+        <td>
+            <a href="{{ path('ifrikiya_site_voir_livre', { 'id': livre.idlivre }) }}">voir le livre</a> 
+        </td>
+        <td>{{ livre.annee }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+ </div>
+ 
+ {% endblock %}

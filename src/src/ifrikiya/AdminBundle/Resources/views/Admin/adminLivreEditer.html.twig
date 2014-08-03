@@ -1,0 +1,58 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration livre| editer{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ {% block stylesheets %}
+   {{ parent() }}
+ {% endblock %}
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+  <h1>Edition d'un Livre</h1>
+<form action="{{ path('ifrikiya_admin_modifier_livre', { 'id': idlivre }) }}" method="post" {{ form_enctype(form) }}>
+   <div class="error">
+	{{ form_errors(form) }}
+    </div>
+    <table>
+     <tr>
+       <td>{{ form_label(form.titre) }}</td>
+       <td>{{ form_errors(form.titre) }}</td>
+	   <td>{{ form_widget(form.titre) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.annee) }}</td>
+	    <td>{{ form_errors(form.annee) }}</td>
+	    <td>{{ form_widget(form.annee) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.format) }}</td>
+	    <td>{{ form_errors(form.format) }}</td>
+	    <td>{{ form_widget(form.format) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.prixUnitaireFcfa) }}</td>
+	    <td>{{ form_errors(form.prixUnitaireFcfa) }}</td>
+	    <td>{{ form_widget(form.prixUnitaireFcfa) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.prixUnitaireEuro) }}</td>
+	    <td>{{ form_errors(form.prixUnitaireEuro) }}</td>
+	    <td>{{ form_widget(form.prixUnitaireEuro) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.presentation) }}</td>
+	    <td>{{ form_errors(form.presentation) }}</td>
+	    <td>{{ form_widget(form.presentation) }}</td>
+	 </tr>
+	</table>
+	 
+    {{ form_rest(form) }}
+    
+    <input type="submit" />
+</form>
+ {% endif %}
+ {% endblock %}

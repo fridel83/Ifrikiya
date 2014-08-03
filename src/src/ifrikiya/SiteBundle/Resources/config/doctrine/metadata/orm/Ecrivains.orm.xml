@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Ecrivains" table="ecrivains">
+    <id name="idecrivains" type="integer" column="idecrivains">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="string" column="nom" length="45" nullable="false"/>
+    <field name="prenom" type="string" column="prenom" length="45" nullable="true"/>
+    <field name="dateNaissance" type="string" column="date_naissance" length="45" nullable="true"/>
+    <field name="login" type="string" column="login" length="45" nullable="true"/>
+    <field name="email" type="string" column="email" length="45" nullable="true"/>
+    <field name="telephone" type="string" column="telephone" length="45" nullable="true"/>
+    <field name="passworld" type="string" column="passworld" length="45" nullable="true"/>
+    <many-to-many field="idLivre" target-entity="Livres" mapped-by="idEcrivain"/>
+  </entity>
+</doctrine-mapping>

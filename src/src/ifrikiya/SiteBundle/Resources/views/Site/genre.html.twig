@@ -1,0 +1,19 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+
+
+{% block corps %}
+<div id="titre_genre">
+     <h4>Genres littéraires </h4>
+  </div>
+
+  {% for genre in genres %}
+    <div id="genre">
+      <p>{{ genre.libelle }}...<a href=" {{ path('ifrikiya_site_voir_genre', {'id':genre.idgenres}) }}">voir les livres</a><p>
+    </div>
+  {% endfor %}
+
+{% endblock %}

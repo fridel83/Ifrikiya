@@ -1,0 +1,26 @@
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+     <div class="error">
+	{{ form_errors(form) }}
+    </div>
+    
+      <table>
+     <tr>
+       <td>{{ form_label(form.email) }}</td>
+       <td>{{ form_errors(form.email) }}</td>
+	   <td>{{ form_widget(form.email) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.username) }}</td>
+	    <td>{{ form_errors(form.username) }}</td>
+	    <td>{{ form_widget(form.username) }}</td>
+	 </tr>
+	 
+	</table>
+	 
+    {{ form_rest(form) }}
+    
+    
+        <p><input type="submit" value="valider" /><p>
+    
+</form>

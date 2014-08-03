@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Abonnes" table="abonnes">
+    <id name="idabonnes" type="integer" column="idabonnes">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="login" type="string" column="login" length="45" nullable="true"/>
+    <field name="pseudo" type="string" column="pseudo" length="45" nullable="true"/>
+    <field name="mdp" type="string" column="mdp" length="45" nullable="true"/>
+    <field name="email" type="string" column="email" length="45" nullable="true"/>
+    <field name="telephone1" type="string" column="telephone1" length="45" nullable="true"/>
+    <field name="telephone2" type="string" column="telephone2" length="45" nullable="true"/>
+    <field name="adresse" type="string" column="adresse" length="45" nullable="true"/>
+    <many-to-many field="idLivre" target-entity="Livres" mapped-by="idAbonnes"/>
+  </entity>
+</doctrine-mapping>

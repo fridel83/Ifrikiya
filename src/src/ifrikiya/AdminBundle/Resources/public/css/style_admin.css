@@ -1,0 +1,571 @@
+@CHARSET "ISO-8859-1";
+html body 
+{
+padding: 0;
+font: 12px/16px Arial, sans-serif;
+width: auto;
+}
+
+body {
+position: relative;
+width: auto;
+margin: 0 auto 0;
+background-color: rgb(221, 248, 249);
+}
+
+#wrapper
+{
+  position: relative;
+  width: auto;
+  height: auto;
+  display:block;
+  margin: 0 auto 0;
+  background-color: white;
+}
+
+#header
+{
+  position: relative;
+  width: auto;
+  display:bloc;
+  height: 200px;
+  margin:8px;
+  border:1px solid white;
+  background:rgb(186, 216, 215);
+}
+
+.home
+{
+	border:0px solid black;
+	display:inline-block;
+	height:16px;
+	vertical-align:bottom;
+	margin-left:300px;
+	margin-top:54px;
+	width:14px;
+	background:rgb(186, 216, 215);
+	float:left;
+}
+
+
+.categorie_admin
+{
+	border:1px solid white;
+	display:inline-block;
+	height:30px;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left:5px;
+	margin-top:50px;
+	width:90px;
+	background:white;
+	float:left;
+	-moz-border-radius:0px 10px 0px 0px;
+    -webkit-border-radius:10px 0;
+    border-radius:10px 0px 0px 0px;
+}
+
+
+#header a
+{
+	text-decoration: none;
+	color: black;
+}
+
+
+.categorie_auteur
+{
+	border-left:1px solid black;
+	display:inline-block;
+	height:25px;
+	margin-top:55px;
+	margin-left:0px;
+	width:90px;
+	background:#4d90fe;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	float:left;
+}
+
+
+
+.categorie_abonne
+{
+	border-left:1px solid black;
+	display:inline-block;
+	height:25px;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top:55px;
+	margin-left:0px;
+	width:90px;
+	background:#4d90fe;
+	float:left;
+    border-radius:0px 10px 0px 0px;
+}
+
+
+
+.categorie_abonne p
+{
+	font-family:arial;
+}
+
+.categorie_auteur p
+{
+	font-family:arial;
+}
+
+.categorie_admin p
+{
+	font-family:arial;
+}
+.recherche
+{
+	border:1px solid solid;
+	display:inline-block;
+	height:25px;
+	margin-top:55px;
+	margin-left:302px;
+	width:204px;
+	background:url("../images/loupe.jpg") no-repeat scroll 100% 50% black;
+	background-color:#4d90fe;
+	float:left;
+	-moz-border-radius:10px 0;
+    -webkit-border-radius:10px 0;
+    border-radius:10px 0px 0px 0px;
+}
+
+.recherche form
+{
+	position:absolute;
+}
+
+#headerlogo
+{
+	width: 800px;
+    height: 115px;
+    margin-left:300px;
+    background:url("../images/logo1.jpg") no-repeat scroll 0% 0% white;
+    border: 0.5px solid green;
+    position: abslute;
+    display:inline-block;
+    
+}
+
+.recherche form
+{
+	position:absolute;
+}
+
+.texte
+{
+	float:right;
+	display:inline-block;
+	width: 400px;
+	height: 50px;
+	border:1px solid white;
+	background-color:#4d90fe;
+	-moz-border-radius:10px 0;
+    -webkit-border-radius:10px 0;
+    border-radius:0px 0px 10px 10px;
+}
+
+.texte p
+{
+	text-align:center;
+	font-style: italic;
+    font-weight: bold;
+    color:green;
+    font-sixe:14px;
+}
+
+#menu
+{
+	width: 800px;
+    height: 50px;
+    margin-left:310px;
+    margin-top:20px;
+    border: 0px solid black;
+}
+
+.catalogue
+{
+	display:inline-block;
+	width:200px;
+	height:30px;
+	border:1px solid green;
+	background:gray;
+	float:left;
+	font-size:14px;
+	-moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+    border-radius:10px 10px;
+}
+
+.catalogue p
+{
+	text-align:center;
+	color:black;
+	font-size:14px;
+}
+
+#menu a
+{
+	text-decoration: none;
+	color: white;
+}
+
+.collection
+{
+	display:inline-block;
+	width:200px;
+	height:30px;
+	border:1px solid red;
+	background:gray;
+	float:left;
+	margin-left:95px;
+	-moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+    border-radius:10px 10px;
+}
+
+.collection p
+{
+	text-align:center;
+	color:black;
+	font-size:14px;
+}
+
+
+.nos_auteurs
+{
+	display:inline-block;
+	width:200px;
+	height:30px;
+	background:gray;
+	border:1px solid yellow;
+	float:left;
+	margin-left:97px;
+	-moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+    border-radius:10px 10px;
+}
+
+.nos_auteurs p
+{
+	text-align:center;
+	color:black;
+	font-size:14px;
+}
+
+#contenu
+{
+	display: inline-block;
+	width: 800px;
+    height: auto;
+    margin-left:310px;
+    float:left;
+    margin-top:20px;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-top: 1px solid silver;
+    background:rgb(186, 216, 215)
+}
+
+.genre
+{
+	width:200px;
+	display:inline-block;
+	height:auto;
+	border-right:0px solid yellow;
+	float:left;
+	
+}
+
+.titre_menu
+{
+	width:200px;
+	height:30px;
+	border:1px solid white;
+	
+	-moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+    border-radius:10px 10px;
+}
+
+.titre_menu h4
+{
+	text-align:center;
+}
+
+.titre_menu a
+{
+	text-decoration: none;
+	color: black;
+}
+
+.premier
+ {
+   height:28px;
+   width:100%;
+   border: 1px solid white;
+   -moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+   float:left;
+   text-align:center;
+   margin-top:1px;
+ }
+
+.premier a
+{
+	text-decoration: none;
+	color: black;
+}
+.deuxieme
+{
+	height:28px;
+   width:100%;
+   border: 1px solid white;
+   -moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+   float:left;
+   text-align:center;
+   background:#DDE7FF;
+	margin-top:1px;
+}
+
+.deuxieme a
+{
+	text-decoration: none;
+	color: black;
+}
+
+.troisieme
+{
+	height:150px;
+   width:100%;
+   border: 1px solid;
+   -moz-border-radius:10px 10px;
+   -webkit-border-radius:10px 10px;
+   border-radius:10px 10px;
+   float:left;
+   text-align:center;
+   background:#DDE7FF;
+}
+
+.corps
+{
+	width:587px;
+	display:inline-block;
+	margin-left:12px;
+	height:auto;
+	border-left:0px solid white;
+}
+
+.corps p
+{
+	color:#4d90fe;
+	font-size:1.3em;
+}
+
+.corps a
+{
+	text-decoration:none;
+}
+
+#pub
+{
+	width:153px;
+	height:400px;
+	position:fixed;
+	display:inline-block;
+	margin-left:12px;
+	margin-top:20px;
+	float:left;
+	border:1px solid black;
+	box-shadow: 10px 10px 6px black;
+    /*border-left: 2px solid silver;*/
+    /*border-right: 2px solid silver;*/
+    /*border-top: 1px solid silver;*/
+    background:rgb(221, 248, 249);
+    vertical-align:top;
+    border-radius:10px 10px 0px 0px;
+}
+
+#pub_haut
+{
+	width:100%;
+	height:30;
+	border:1px solid black;
+	border-radius:10px 10px 0px 0px;
+	background-color:#4d90fe;
+}
+
+#pub_haut p
+{
+	text-align:center;
+	font-family:Comic Sans MS ;
+	font-sixe:12px;
+}
+
+#livre
+{
+	width:auto;
+	height:auto;
+}
+
+
+.ident
+{
+	width:90%;
+	margin-left:6px;
+	padding:6px;
+	height:auto;
+	border:1px solid white;
+   
+}
+
+#bienvenu
+{
+	width:100%;
+	height:auto;
+	border:1px solid white;
+}
+
+#bienvenu p
+{
+	text-align:center;
+	font-size:1.3em;
+	color:black;
+	font-family:verdana;
+}
+
+#administration
+{
+	width:50%;
+	margin-left:130px;
+	margin-top:30px;
+	height:30px;
+	border:1px solid white;
+	border-radius:10px 10px;
+	background:white
+}
+
+#administration p
+{
+	text-align:center;
+	font-size:1.2em;
+	font-family:verdana;
+}
+
+
+
+#admin
+{
+	height:auto;
+	width:95%;
+	padding:20px;
+	margin-top:30px;
+}
+
+#login
+{
+	height:auto;
+	width:80%;
+	padding:20px;
+	border:1px dotted white;
+	margin-top:100px;
+	margin-left:40px;
+	box-shadow: 6px 6px 6px black;
+}
+
+#login h3
+{
+	text-align:center;
+	font-size:1.2em;
+} 
+
+
+#login h4
+{
+	text-align:center;
+	font-size:1.2em;
+} 
+
+#login p
+{
+	text-align:center;
+} 
+
+#admin h1
+{
+	text-align:center;
+	font-size:1.3em;
+	font-family:verdana;
+	color:red;
+}
+
+
+
+/*pour la page ident */
+
+#inscription
+{
+	width: 100px;
+    height: 20px;
+    border:1px solid;
+    border-radius:10px 10px 10px 10px;
+    background: gray;
+    margin-left:160px;
+     
+}
+
+#inscription a
+{
+	text-decoration:none;
+}
+
+#inscription p
+{
+	font-family:arial;
+	text-align:center;
+	color:black;
+}
+
+#error
+{
+	width:100%;
+	height:auto;
+	border:1px solid white;
+}
+
+#error p
+{
+	text-align:center;
+	font-size:1.3em;
+	color:red;
+	font-family:verdana;
+}
+
+
+#footer
+{
+	bottom:0px;
+	width: 100%;
+    height: 80px;
+    margin-left:8px;
+    border:0px solid black;
+	position: relative;
+    display:inline-block;
+    border-radius:10px 10px 0px 0px;
+    background:rgb(164, 155, 155);
+    text-align: center;
+    font-size: 90%;
+    line-height: 1.5em;
+    margin: 0;
+    font: 0.9em "trebuchet ms", helvetica, arial, sans-serif;
+}
+

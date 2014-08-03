@@ -1,0 +1,20 @@
+{% extends "::modelcatalogue.html.twig" %}
+{% block title %}Auteur{% endblock %}
+
+{% block stylesheets %}
+		  <link rel="stylesheet" href="{{ asset('bundles/ifrikiyaauteurs/css/style_auteur.css') }}" type="text/css" />
+		  <!--[if lte IE 7]>
+          <link rel="stylesheet" href="{{ asset('bundles/ifrikiyaauteurs/css/style_auteurie.css') }}" type="text/css" />
+          <![endif]-->
+{% endblock %}
+
+{% block corps %}
+
+ <div id="photo">
+   <h4> {{ ecrivain.NomPrenom }} bienvenu sur votre espace personnalisé</h4>
+    <p> que voulez vous faire? </p>
+     <a href=" {{ path('ifrikiya_auteur_editer', {'id':ecrivain.idecrivains}) }}">editer votre fiche</a></br>
+     <a href=" {{ path('ifrikiya_auteur_livres', {'id':ecrivain.idecrivains }) }}">voir vos livres</a></br>
+     <a href=" {{ path('ifrikiya_auteur_manuscrit',{'id':ecrivain.idecrivains}) }}">déposer un manuscrit</a>
+ </div>
+{% endblock %}

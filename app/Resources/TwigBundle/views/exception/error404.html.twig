@@ -1,0 +1,39 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}
+ An Error Occurred: {{ status_text }}
+{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ {% block stylesheets %}
+   {{ parent() }}
+ {% endblock %}
+ 
+ {% block menu %}
+  
+    <div class="catalogue">
+		 <p><a href="{{ path('ifrikiya_admin_acceuil') }}">bienvenu {{ app.user.username }}!!!</a></p>
+	  </div>
+	  <div class="collection">
+		 <p><a href="{{ path('ifrikiya_admin_acceuil') }}">page acceuil admin</a></p>
+	  </div>
+	  <div class="nos_auteurs">
+		 <p><a href="{{ path('logout') }}">deconnexion</a></p>
+	  </div>  
+  
+ {% endblock %}
+ 
+ {% block corps %}
+    <h1>Oops! une erreur s'est produite</h1>
+    <h2>le serveur retourne: "{{ status_code }} {{ status_text }}".</h2>
+ 
+    <div>
+	   <h1>hein père!!! 404</h1>
+	   <p>la page que vous cherchez n'existe pas(ou plus)...</p>
+      désolé pour ce désagrément nous nous efforçons de résoudre le problème très rapidement</br>
+	     <a href="{{ path('ifrikiya_site_acceuil') }}>retour acceuil</a>
+    </div>
+ {% endblock %}

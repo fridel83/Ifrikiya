@@ -1,0 +1,74 @@
+<?php
+
+namespace ifrikiya\SiteBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Admin
+ *
+ * @ORM\Table(name="admin")
+ * @ORM\Entity
+ */
+class Admin
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idadmin", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idadmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=45, nullable=true)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=45, nullable=true)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=45, nullable=true)
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mdp", type="string", length=45, nullable=true)
+     */
+    private $mdp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone1", type="string", length=45, nullable=true)
+     */
+    private $telephone1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone2", type="string", length=45, nullable=true)
+     */
+    private $telephone2;
+
+
+}

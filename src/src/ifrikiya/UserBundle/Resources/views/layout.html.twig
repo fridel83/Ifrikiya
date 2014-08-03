@@ -1,0 +1,25 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ {% block stylesheets %}
+   {{ parent() }}
+ {% endblock %}
+ 
+
+ 
+ {% block corps %}
+   
+     {% trans_default_domain 'FOSUserBundle' %}
+
+     {% block fos_user_content %}
+     <div id="erreur">
+     {% if error %}
+       <div>{{ error|trans }}</div>
+    {% endif %}
+     {% include "ifrikiyaUserBundle:connexion.html.twig" %}
+    </div>
+   {% endblock fos_user_content %}
+ {% endblock %}

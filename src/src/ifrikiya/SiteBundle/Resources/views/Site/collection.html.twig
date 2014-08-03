@@ -1,0 +1,16 @@
+{% extends "::modelcatalogue.html.twig" %}
+{% block title %}liste collection  {% endblock %}
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+
+
+{% block corps %}
+
+  {% for collection in collections %}
+    <div id="collection">
+      <p>{{ collection.libelle }}...<a href=" {{ path('ifrikiya_site_voir_collection', { 'id':collection.idcollections }) }}">voir la collection</a></p>
+    </div>
+  {% endfor %}
+
+{% endblock %}

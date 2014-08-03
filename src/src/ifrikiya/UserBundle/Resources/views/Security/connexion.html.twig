@@ -1,0 +1,22 @@
+
+     <p>identifiez vous<p>
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+ <table class="table">
+   <tr>
+    <td><label for="username">login:</label></td>
+    <td><input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></td>
+   </tr>
+   <tr>
+    <td><label for="password">mdp:</label></td>
+    <td><input type="password" id="password" name="_password" required="required" /></td>
+    <!--<td><a href="{{ path('fos_user_change_password') }}">mot de passe oublié?</a></td>-->
+   </tr>
+  </table> 
+    <p><input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    <label for="remember_me">se souvenir de moi</label></p>
+  
+    <p><input type="submit" id="_submit" name="_submit" value="valider" /></p>
+  </form>
+  <!--<p><a href=" {{ path('fos_user_registration_register') }}">inscription</a></p>-->
+

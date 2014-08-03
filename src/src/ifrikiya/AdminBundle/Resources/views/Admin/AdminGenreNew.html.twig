@@ -1,0 +1,19 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration Genre| ajout{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+   <h1>Ajout d'un nouveau genre</h1>
+   <form action="{{ path('ifrikiya_admin_ajouter_genre') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" />
+</form>
+ {% endif %}
+ {% endblock %}

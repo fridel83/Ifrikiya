@@ -1,0 +1,42 @@
+<?php
+
+namespace ifrikiya\SiteBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Photo
+ *
+ * @ORM\Table(name="photo")
+ * @ORM\Entity
+ */
+class Photo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idphoto", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idphoto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=45, nullable=true)
+     */
+    private $nom;
+
+    /**
+     * @var \Ecrivains
+     *
+     * @ORM\ManyToOne(targetEntity="Ecrivains")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_ecrivains", referencedColumnName="idecrivains")
+     * })
+     */
+    private $idEcrivains;
+
+
+}

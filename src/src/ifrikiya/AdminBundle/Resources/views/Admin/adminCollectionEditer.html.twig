@@ -1,0 +1,27 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block title %}Administration collections| editer{% endblock %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+ 
+ {% block stylesheets %}
+   <link rel="stylesheet" href="{{ asset('bundles/ifrikiyaadmin/css/style_admin.css') }}" type="text/css" />
+		  <!--[if lte IE 7]>
+          <link rel="stylesheet" href="{{ asset('bundles/ifrikiyaadmin/css/style_adminie.css') }}" type="text/css" />
+          <![endif]-->
+ {% endblock %}
+ 
+ 
+ 
+ {% block corps %}
+ {% if is_granted('ROLE_ADMIN') %}
+  <h1>Edition d'une collection</h1>
+<form action="{{ path('ifrikiya_admin_modifier_genre', { 'id': idcollection }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    
+    <input type="submit" />
+</form>
+ {% endif %}
+ {% endblock %}

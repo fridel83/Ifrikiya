@@ -1,0 +1,26 @@
+ifrikiya_auteurs_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ifrikiyaAuteursBundle:Default:index }
+ifrikiya_auteurs_acceuil:
+    pattern:  /acceuil
+    defaults: { _controller: ifrikiyaAuteursBundle:Auteurs:auteursAcceuil }
+ifrikiya_page_auteur:
+    pattern: /fiche/{id}
+    defaults: { _controller: ifrikiyaAuteursBundle:Auteurs:ficheAuteur }
+    requirements:
+        id:  \d+
+ifrikiya_auteur_editer:
+    pattern: /editer/{id}
+    defaults: { _controller: ifrikiyaAuteursBundle:Auteurs:editer.html.twig }
+    requirements:
+        id: \d+
+ifrikiya_auteur_livres:
+    pattern: /livres/{id}
+    defaults: { _controller: ifrikiyaAuteursBundle:Auteurs:livre.html.twig }
+    requirements:
+        id:  \d+
+ifrikiya_auteur_manuscrit:
+    pattern: /manuscrit/{id}
+    defaults: { _controller: ifrikiyaAuteursBundle:Auteurs:manuscrit.html.twig }
+    requirements:
+        id:  \d+

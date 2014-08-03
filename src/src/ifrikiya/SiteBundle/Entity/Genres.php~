@@ -1,0 +1,32 @@
+<?php
+
+namespace ifrikiya\SiteBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Genres
+ *
+ * @ORM\Table(name="genres")
+ * @ORM\Entity
+ */
+class Genres
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idgenres", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idgenres;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelle", type="string", length=45, nullable=false)
+     */
+    private $libelle;
+
+
+}

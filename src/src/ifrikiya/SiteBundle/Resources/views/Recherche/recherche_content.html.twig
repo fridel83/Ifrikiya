@@ -1,0 +1,24 @@
+<form action="{{ path('ifrikiya_site_recherche_detaillee') }}" {{ form_enctype(form) }} method="POST" class="ifrikiya_sitebundle_recherche">
+    
+      <table>
+     <tr>
+       <td>{{ form_label(form.titre) }}</td>
+       <td>{{ form_errors(form.titre) }}</td>
+	   <td>{{ form_widget(form.titre) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.auteur) }}</td>
+	    <td>{{ form_errors(form.auteur) }}</td>
+	    <td>{{ form_widget(form.auteur) }}</td>
+	 </tr>
+	 <tr>
+	    <td>{{ form_label(form.annee) }}</td>
+	    <td>{{ form_errors(form.annee) }}</td>
+	    <td>{{ form_widget(form.annee) }}</td>
+	 </tr>
+	 
+	</table>
+	 
+        <p><input type="submit" value="lancer la recherche" /><p>
+    
+</form>

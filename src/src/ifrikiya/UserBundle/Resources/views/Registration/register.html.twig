@@ -1,0 +1,10 @@
+
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block corps %}
+    {% block fos_user_content %}
+    {% trans_default_domain 'FOSUserBundle' %}
+    <h3>inscription</h3>
+{% include "ifrikiyaUserBundle:Registration:register_content.html.twig" %}
+{% endblock fos_user_content %}
+{% endblock %}

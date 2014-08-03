@@ -1,0 +1,34 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+
+
+{% block corps %}
+
+  <div id="cadre">
+    <div class="cadre_image">
+      
+      <a href="{{ path('ifrikiya_site_voir_livre', {'id':livre.idlivre }) }}"><img src="{{ asset('bundles/ifrikiyasite/images/livres/'~nom)}}" /></a>
+    </div>
+    <div class="present">
+      <h3><a href="{{ path('ifrikiya_site_voir_livre', {'id':livre.idlivre }) }}">{{ livre.titre }}</a></h3>
+      <p> paru en: {{ livre.annee }}</p>
+      <p>prix: {{ livre.prixUnitaireFcfa }} fcfa,  {{ livre.prixUnitaireEuro }} euros</p>
+    </div>
+    <div class="auteur">
+    <h3>Auteurs:</h3>
+      {% for auteur in auteurs %}
+         <h4><a href="{{ path('ifrikiya_site_un_ecrivain', {'id':auteur.idecrivains }) }}">{{ auteur.prenom~" "~auteur.nom }}</a></br></h4>
+     {% endfor %}
+    </div>
+    <div id="presentation">
+     <p> {{ livre.presentation }}</p>
+    </div>
+  </div>
+  <hr/>
+
+
+{% endblock %}

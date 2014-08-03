@@ -1,0 +1,21 @@
+{% extends "::modelcatalogue.html.twig" %}
+
+{% block encodage %}
+   {{ parent() }}
+ {% endblock %} 
+
+
+{% block title %}liste livres{% endblock %}
+
+{% block corps %}
+
+{% for livre in liste_livre %}
+ 
+ <div id="ecrivain">
+    <p>{{ livre.titre }}...<a href="{{ path('ifrikiya_site_voir_livre', { 'id':livre.idlivre })  }}">lire la fiche</a></p>
+ </div>
+ 
+ {% endfor%}
+ 
+
+{% endblock %}

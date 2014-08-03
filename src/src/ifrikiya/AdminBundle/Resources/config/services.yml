@@ -1,0 +1,19 @@
+parameters:
+#    ifrikiya_admin.example.class: ifrikiya\AdminBundle\Example
+
+services:
+    ifrikiya.form.type.Livres:
+        class: ifrikiya\SiteBundle\Form\LivresType
+        tags:
+            - { name: form.type.livres, alias: livre }
+    ifrikiya.form.type.Ecrivains:
+        class: ifrikiya\SiteBundle\Form\LivresType
+        tags:
+            - { name: form.type.ecrivains, alias: ecrivain }
+    ifrikiya.form.type.Genres:
+        class: ifrikiya\SiteBundle\Form\GenresType
+        tags:
+            - { name: form.type.genres, alias: genre }
+#    ifrikiya_admin.example:
+#        class: %ifrikiya_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

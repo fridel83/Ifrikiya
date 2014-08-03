@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Photo" table="photo">
+    <id name="idphoto" type="integer" column="idphoto">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="string" column="nom" length="45" nullable="true"/>
+    <many-to-one field="idEcrivains" target-entity="Ecrivains">
+      <join-columns>
+        <join-column name="id_ecrivains" referenced-column-name="idecrivains"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
